@@ -21,7 +21,7 @@ func dbConn() (db *sql.DB) {
 	dbDriver := "mysql"
 	dbUser := "root"
 	dbPass := ""
-	dbName := "db_act5"
+	dbName := "db_act5" // ubah dbName dengan nama database yg kalian pengen
 	db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@tcp(localhost)/"+dbName)
 	if err != nil {
 		panic(err.Error())
@@ -181,7 +181,7 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	log.Println("Server started on: http://localhost:8068")
+	log.Println("Server started on: http://localhost:8068") // ganti port jadi npm kalian
 	http.HandleFunc("/", Index)
 	http.HandleFunc("/show", Show)
 	http.HandleFunc("/new", New)
@@ -189,5 +189,5 @@ func main() {
 	http.HandleFunc("/insert", Insert)
 	http.HandleFunc("/update", Update)
 	http.HandleFunc("/delete", Delete)
-	http.ListenAndServe(":8068", nil)
+	http.ListenAndServe(":8068", nil) //ganti port jadi npm kalian
 }
